@@ -24,7 +24,6 @@
      * 
      */ -->
 <?php
-
 class Persona {
 
     private $nome;
@@ -107,19 +106,22 @@ class Employee extends Persona {
     }
 
     public function printFullEmployee() {
-        return $this -> getNome() . " " . $this -> getCognome() . ": " . $this -> getStipendio() . "$" . " " . "(" . $this -> getDataAssunzione() . ")";
+        echo $this ;
     }
 
     public function __toString() {
-        return $this -> printFullEmployee();
+        return $this -> getNome() . " " . $this -> getCognome() . ": " . $this -> getStipendio() . "$" . " " . "(" . $this -> getDataAssunzione() . ")";
     }
 }
 
-$e1 = new Employee("Pinco", "Pallino", "1200");
+$e1 = new Employee("Pinco", "Pallino", 1200);
 $e1 -> setdataAssunzione("14 / 09 / 2010");
-$e2 = new Employee("Mario", "Rossi", "1400");
+$e2 = new Employee("Mario", "Rossi", 1400);
 $e2 -> setdataAssunzione("22 / 12 / 2011");
 echo "e1: " . $e1 . "</br>";
-echo "e2: " . $e2;
+$e1 -> printFullEmployee();
+?>
+
+<?php
 
 ?>
